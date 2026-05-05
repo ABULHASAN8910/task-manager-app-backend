@@ -43,15 +43,6 @@ app.use((err, req, res, next) => {
 // ✅ START SERVER ONLY AFTER DB CONNECTS
 const PORT = process.env.PORT || 5000;
 
-db.connect((err) => {
-  if (err) {
-    console.error("❌ DB Connection failed:", err);
-    process.exit(1);
-  }
-
-  console.log("✅ Database connected");
-
-  app.listen(PORT, "0.0.0.0", () => {
-    console.log(`🚀 Server running on port ${PORT}`);
-  });
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`🚀 Server running on port ${PORT}`);
 });
